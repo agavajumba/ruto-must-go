@@ -42,4 +42,5 @@ To contribute, please fork this repository, create a branch, and submit a pull r
 
 ## License
 
-This project is open-source and available under the CREATIVE COMS License.
+This project is open-source and available under the CC0-1.0 license.
+
