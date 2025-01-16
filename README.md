@@ -15,7 +15,7 @@ A website dedicated to exposing the controversial actions and wrongdoings of Pre
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/ruto-must-go.git
+   git clone https://github.com/DKTJONATHAN/ruto-must-go.git
    ```
 
 2. Navigate to the project directory:
