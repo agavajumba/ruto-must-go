@@ -9,7 +9,7 @@ A website dedicated to exposing the controversial actions and wrongdoings of Pre
 - Current issues:
   - Blank space on the left of the desktop page.
   - Misalignment in the mobile version.
-  
+  - Find the images in the Public\external directory
 ## Installation
 
 1. Clone this repository to your local machine:
