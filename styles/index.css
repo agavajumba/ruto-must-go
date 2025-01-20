@@ -1,346 +1,289 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", serif;
-}
-
-html {
-  scroll-behavior: smooth;
-  background-color: aliceblue;
-}
-
+/* Global Styles */
 body {
-  margin: 0 auto;
-  font-weight: 400;
-  font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
-body .main-frame {
-  margin: 0 auto;
-}
-body .main-frame .frame1 {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  align-items: center;
-  background: #fff;
-}
-body .main-frame .frame1 .navbar-section1 {
-  display: flex;
-  align-items: center;
-}
-body .main-frame .frame1 .navbar-section1 span {
-  cursor: pointer;
-}
-body .main-frame .frame1 .navbar-section1 #menu {
-  visibility: collapse;
-}
-body .main-frame .frame1 .navbar-section1 h2 {
-  margin-left: 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
-body .main-frame .frame1 .navbar-section2 {
-  transition-duration: 2s;
-}
-body .main-frame .frame1 .navbar-section2 ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-body .main-frame .frame1 .navbar-section2 ul li a {
-  font-size: 1rem;
-  text-decoration: none;
-  color: #000;
-  display: block;
-  padding: 0 5px;
-}
-body .main-frame .frame1 .navbar-section2 ul li a:hover {
-  color: #dd0808;
-}
-body .main-frame .frame1 .navbar-section3 {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-  align-items: center;
-}
-body .main-frame .frame1 .navbar-section3 span {
-  margin: 0 2px;
-  cursor: pointer;
-}
-@media screen and (max-width: 40rem) {
-  body .main-frame .frame1 .navbar-section1 {
-    display: flex;
-    align-items: center;
-  }
-  body .main-frame .frame1 .navbar-section1 span {
-    cursor: pointer;
-  }
-  body .main-frame .frame1 .navbar-section1 #menu {
-    visibility: visible;
-  }
-  body .main-frame .frame1 .navbar-section1 h2 {
-    margin-left: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  body .main-frame .frame1 .navbar-section2 {
-    display: none;
-  }
-  body .main-frame .frame1 .navbar-section2 ul {
-    list-style-type: none;
-    display: block;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    left: 0;
-    top: 55px;
-    background: #000;
-    height: 100vh;
-    width: 100%;
-  }
-  body .main-frame .frame1 .navbar-section2 ul li a {
-    font-size: 1rem;
+
+a {
     text-decoration: none;
-    color: #fff;
-    display: block;
-    padding: 10px;
+    color: inherit;
+}
+
+/* Main Frame */
+.main-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styling */
+.frame1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.navbar-section1 h2 {
+    font-size: 24px;
+}
+
+.navbar-section2 ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-section2 ul li a {
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar-section2 ul li a:hover {
+    color: #FFD700;
+}
+
+.navbar-section3 span {
+    font-size: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Frame2: Static Header Image with Glassmorphism */
+.frame2 {
+    position: relative;
+    height: 400px; /* Set a fixed height for the header */
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Single Header Image */
+.header-image {
     width: 100%;
     height: 100%;
-  }
-  body .main-frame .frame1 .navbar-section2 ul li a:hover {
-    border-bottom: 1px solid #dd0808;
-  }
-  body .main-frame .frame1 .navbar-section3 {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;
-    align-items: center;
-  }
-  body .main-frame .frame1 .navbar-section3 span {
-    margin: 0 2px;
-    cursor: pointer;
-  }
+    object-fit: cover;
+    object-position: top; /* Position the image so the top part is visible */
+    filter: brightness(50%); /* Reduce brightness by 50% */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Set lower z-index to position behind the glassmorphism */
 }
-body .main-frame .frame2 {
-  width: 100%;
-  height: 400px;
-  background-image: url("../Assets/tq_gkuesghzdx-71l1500h.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-body .main-frame .frame2 .frame2-section h1 {
-  font-size: 4rem;
-}
-body .main-frame .frame2 .frame2-section p {
-  font-weight: bolder;
-  padding: 2rem 0;
-}
-body .main-frame .frame2 .frame2-section a {
-  color: #fff;
-  background: #dd0808;
-  padding: 10px 20px;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 3rem;
-  text-decoration: none;
-}
-body .main-frame .frame2 .frame2-section a:hover {
-  background: rgba(221, 8, 8, 0.8078431373);
-}
-@media screen and (max-width: 40rem) {
-  body .main-frame .frame2 {
+
+/* Glassmorphism Overlay */
+.frame2-content .glassmorphism {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 400px;
-    background-image: url("../Assets/tq_gkuesghzdx-71l1500h.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    color: #fff;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
     text-align: center;
-  }
-  body .main-frame .frame2 .frame2-section h1 {
-    font-size: 2rem;
-    padding: 0 1rem;
-  }
-  body .main-frame .frame2 .frame2-section p {
-    font-weight: bolder;
-    padding: 2rem 1rem;
-  }
-  body .main-frame .frame2 .frame2-section a {
-    color: #fff;
-    background: #dd0808;
-    padding: 10px 20px;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 3rem;
-    text-decoration: none;
-  }
-  body .main-frame .frame2 .frame2-section a:hover {
-    background: rgba(221, 8, 8, 0.8078431373);
-  }
-}
-body .main-frame .frame3 {
-  margin: 1rem;
-  padding: 3rem 0;
-}
-body .main-frame .frame3 h1 {
-  padding-bottom: 2rem;
-}
-body .main-frame .frame3 .frame3-section {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 2rem;
-}
-body .main-frame .frame3 .frame3-section .card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2274509804);
-}
-body .main-frame .frame3 .frame3-section .card .top img {
-  width: 100%;
-  height: 250px;
-  border-radius: 1rem 1rem 0 0;
-}
-body .main-frame .frame3 .frame3-section .card .bottom {
-  margin: 1rem;
-}
-body .main-frame .frame3 .frame3-section .card .bottom h5 {
-  padding: 1rem 0;
-  color: #dd0808;
-}
-body .main-frame .frame3 .frame3-section .card .bottom p {
-  padding: 1rem 0;
-}
-body .main-frame .frame3 .frame3-section .card .bottom a {
-  background: #000;
-  color: #fff;
-  padding: 0.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-}
-body .main-frame .frame3 .frame3-section .card .bottom a:hover {
-  background: #dd0808;
-}
-@media screen and (max-width: 40rem) {
-  body .main-frame .frame3 {
-    margin: 0;
-    padding: 1rem 0.5rem;
-  }
-  body .main-frame .frame3 h1 {
-    padding-bottom: 1rem;
-  }
-  body .main-frame .frame3 .frame3-section {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1rem;
-  }
-  body .main-frame .frame3 .frame3-section .card {
-    background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2274509804);
-  }
-  body .main-frame .frame3 .frame3-section .card .top img {
-    height: 180px;
-  }
-  body .main-frame .frame3 .frame3-section .card .bottom {
-    margin: 0.5rem;
-  }
-  body .main-frame .frame3 .frame3-section .card .bottom h5 {
-    padding: 0.5rem 0;
-  }
-  body .main-frame .frame3 .frame3-section .card .bottom p {
-    padding: 0.5rem 0;
-  }
-  body .main-frame .frame3 .frame3-section .card .bottom a {
-    padding: 0.5rem;
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-  }
-}
-body .main-frame .frame4 {
-  background: #000;
-  color: #fff;
-  padding: 2rem 2rem 0 2rem;
-}
-body .main-frame .frame4 .frame4-top h1 {
-  text-transform: capitalize;
-}
-body .main-frame .frame4 .frame4-top .frame4-top-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 2rem;
-}
-body .main-frame .frame4 .frame4-top .frame4-top-section .card1 {
-  background: rgba(112, 112, 112, 0.4823529412);
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-body .main-frame .frame4 .frame4-top .frame4-top-section .card1 a {
-  display: block;
-  text-decoration: none;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  border-radius: inherit;
-  color: white;
-}
-body .main-frame .frame4 .frame4-top .frame4-top-section .card1 a:hover {
-  background: #dd0808;
-}
-body .main-frame .frame4 .frame4-bottom {
-  margin: 8rem 0 0 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  padding: 0 0 2rem 0;
-  gap: 2rem;
-}
-body .main-frame .frame4 .frame4-bottom .col h2 {
-  text-transform: capitalize;
-  font-size: 1rem;
-  margin: 0 0 1rem 0;
-}
-body .main-frame .frame4 .frame4-bottom .col ul {
-  list-style-type: none;
-}
-body .main-frame .frame4 .frame4-bottom .col ul li {
-  margin: 0.5rem 0;
-}
-body .main-frame .frame4 .frame4-bottom .col ul li a {
-  color: #707070;
-  text-decoration: none;
-}
-body .main-frame .frame4 .frame4-bottom .col ul li a:hover {
-  text-decoration: underline #dd0808;
-}
-body .main-frame .frame4 .frame4-bottom .col p {
-  margin: 1rem 0;
-}
-body .main-frame .frame4 .frame4-bottom .col4 ul {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 1.5rem;
+    opacity: 1; /* Set to 100% opacity */
+    z-index: 2; /* Set a higher z-index so it appears above the image */
 }
 
-/*# sourceMappingURL=index.css.map */
+.frame2-content .glassmorphism h1 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.frame2-content .glassmorphism p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.frame2-content .glassmorphism a {
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: black;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.frame2-content .glassmorphism a:hover {
+    background-color: #FFA500;
+}
+
+/* Featured Stories Section */
+.frame3 {
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.frame3 h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.frame3-section {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .top img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .bottom {
+    padding: 20px;
+}
+
+.card .bottom h5 {
+    color: #FFD700;
+    font-size: 14px;
+}
+
+.card .bottom h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.card .bottom p {
+    font-size: 14px;
+    color: #555;
+}
+
+.card .bottom a {
+    color: #FFD700;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.card .bottom a:hover {
+    color: #FFA500;
+}
+
+/* Popular Topics Section */
+.frame4 {
+    padding: 40px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.frame4 h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.frame4-top-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card1 {
+    background-color: #444;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.card1:hover {
+    background-color: #FFD700;
+}
+
+.card1 a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card1 a:hover {
+    color: black;
+}
+
+/* Footer */
+.frame4-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.col {
+    flex: 1;
+}
+
+.col h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.col ul li a {
+    display: block;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.col ul li a:hover {
+    color: #FFD700;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .frame1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-section2 ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .navbar-section2 ul.active {
+        display: flex;
+    }
+
+    .navbar-section3 span {
+        margin-left: 0;
+    }
+
+    .frame3-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .frame4-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+}
