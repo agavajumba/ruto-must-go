@@ -93,6 +93,31 @@ article p {
     margin-right: 15px;
 }
 
+/* Image Carousel Styles */
+.image-carousel {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image:first-child {
+    display: block;
+}
+
+.carousel-image:nth-child(2) {
+    display: none;
+}
+
 /* Footer Styles */
 footer {
     background-color: #000; /* Black */
