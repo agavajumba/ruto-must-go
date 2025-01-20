@@ -13,10 +13,10 @@
         }
 
         body {
-            background-color: #001000; /* Kenyan Flag: Green */
+            background-color: #f4f4f4; /* Lighter background for contrast */
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
+            line-height: 1.8;
+            color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -24,17 +24,35 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
+            background: #005f3c; /* Kenyan Flag: Dark Green */
+            color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        h1 {
-            font-size: 2.8em;
+        header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2.2em;
             font-weight: bold;
-            margin-bottom: 10px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
         }
 
         /* Main Content Styles */
@@ -42,56 +60,88 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            padding: 20px 0;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         article {
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
 
-        p {
-            color: #000;
-            font-size: 18px;
+        article h2 {
+            font-size: 2.4em;
+            color: #005f3c;
             margin-bottom: 20px;
+        }
+
+        article p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .article-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .article-meta span {
+            margin-right: 15px;
         }
 
         /* Footer Styles */
         footer {
-            background-color: #000;
-            color: #fff;
+            background-color: #333;
+            color: white;
             text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            padding: 25px 0;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
+            header nav {
+                flex-direction: column;
+                align-items: center;
             }
-            
-            h1 {
+
+            header h1 {
                 font-size: 2em;
             }
-            
+
             .container {
-                padding: 0 15px;
+                padding: 0 10px;
             }
-            
+
             article {
                 padding: 20px;
             }
-            
-            p {
+
+            article h2 {
+                font-size: 2em;
+            }
+
+            article p {
                 font-size: 16px;
             }
         }
@@ -99,12 +149,25 @@
 </head>
 <body>
     <header>
-        <h1>Abductions Under William Ruto's Presidency</h1>
+        <nav>
+            <h1>Ruto Must Go</h1>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
     </header>
 
     <main>
         <div class="container">
             <article>
+                <div class="article-meta">
+                    <span><strong>Author:</strong> John Doe</span>
+                    <span><strong>Published:</strong> January 19, 2025</span>
+                </div>
+                <h2>Abductions Under William Ruto's Presidency</h2>
                 <p>
                     Since William Ruto became the President of Kenya, there has been a marked increase in abductions, mostly targeting individuals who are critical of the government, activists, and those involved in political dissent. This issue has drawn considerable attention from human rights organizations, local citizens, and international observers, with numerous reports detailing the alarming trend.
                 </p>
@@ -137,7 +200,7 @@
     </main>
 
     <footer>
-        <p>© 2025 Ruto Must Go</p>
+        <p>© 2025 Ruto Must Go | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 </html>
