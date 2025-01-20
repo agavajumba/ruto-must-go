@@ -83,16 +83,6 @@ article p {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.article-meta {
-    font-size: 0.9em;
-    color: #ddd; /* Light grey for metadata */
-    margin-bottom: 20px;
-}
-
-.article-meta span {
-    margin-right: 15px;
-}
-
 /* Image Carousel Styles */
 .image-carousel {
     position: relative;
@@ -116,6 +106,17 @@ article p {
 
 .carousel-image:nth-child(2) {
     display: none;
+}
+
+/* Article Metadata */
+.article-meta {
+    font-size: 0.9em;
+    color: #ddd; /* Light grey for metadata */
+    margin-bottom: 20px;
+}
+
+.article-meta span {
+    margin-right: 15px;
 }
 
 /* Footer Styles */
