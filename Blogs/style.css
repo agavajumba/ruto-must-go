@@ -6,28 +6,29 @@
 }
 
 body {
-    background-color: #001000; /* Kenyan Flag: Green */
+    background-color: #006400; /* A brighter green for better vibrancy */
     font-family: 'Arial', sans-serif;
+    color: #fff; /* Default text color */
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    color: #fff; /* Default text color */
 }
 
 /* Header Styles */
 header {
-    background-color: #fff; /* White */
-    color: #001000; /* Kenyan Flag: Green */
+    background-color: #fff;
+    color: #006400; /* Matching vibrant green for the header */
     text-align: center;
     padding: 30px 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     font-size: 2.5em;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1::after {
@@ -35,52 +36,60 @@ h1::after {
     display: block;
     width: 100px;
     height: 3px;
-    background-color: #001000;
+    background-color: #006400;
     margin: 10px auto 0;
 }
 
-/* Main Content Styles */
+/* Main Content Area */
 main {
     flex-grow: 1;
     padding: 20px;
-    background-color: rgba(0, 16, 0, 0.8); /* Semi-transparent green for contrast */
+    background-color: rgba(0, 16, 0, 0.8); /* Slightly transparent green for contrast */
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align content to the top */
     overflow-y: auto;
 }
 
+/* Container for center alignment of content */
 .container {
     max-width: 1000px;
     width: 100%;
     padding: 0 20px;
 }
 
+/* Article Styles */
 article {
     max-width: 900px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.1); /* Light overlay for better readability */
+    background-color: rgba(255, 255, 255, 0.3); /* Light overlay for readability */
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-article h2 {
-    font-size: 2.4em;
-    color: #fff; /* Title in white for better contrast */
+/* Meta Information (Author, Date, etc.) */
+.article-meta {
+    font-size: 0.9em;
+    color: #ddd; /* Light grey for metadata */
     margin-bottom: 20px;
 }
 
+.article-meta span {
+    margin-right: 15px;
+}
+
+/* Text Paragraphs */
 article p {
-    color: #f00; /* Kenyan Flag: Red */
+    color: #ff4500; /* Vibrant orange-red for contrast */
     font-size: 18px;
     line-height: 1.6;
     text-align: justify;
     margin: 0 auto 20px;
     padding: 25px;
-    background-color: rgba(255, 255, 255, 0.2); /* Light overlay for better readability */
+    background-color: rgba(255, 255, 255, 0.4); /* Brighter background for readability */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Image Carousel Styles */
@@ -108,24 +117,13 @@ article p {
     display: none;
 }
 
-/* Article Metadata */
-.article-meta {
-    font-size: 0.9em;
-    color: #ddd; /* Light grey for metadata */
-    margin-bottom: 20px;
-}
-
-.article-meta span {
-    margin-right: 15px;
-}
-
 /* Footer Styles */
 footer {
-    background-color: #000; /* Black */
-    color: #fff; /* White */
+    background-color: #000;
+    color: #fff;
     text-align: center;
     padding: 15px 0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
@@ -138,7 +136,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
     header, main, footer {
         padding: 15px;
