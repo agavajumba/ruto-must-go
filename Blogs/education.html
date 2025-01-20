@@ -73,6 +73,26 @@
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
 
+        /* Image Carousel Styles */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel-images img {
+            max-width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -105,6 +125,14 @@
     <main>
         <div class="container">
             <article>
+                <!-- Image Carousel with automatic switching of images every 2 seconds -->
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="image1.jpg" alt="Image 1">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                </div>
+
                 <p>
                     Since President William Ruto took office, the education sector in Kenya has faced numerous challenges, making learning an increasingly daunting task for students. One of the most significant issues has been the removal of the higher education funding model, which has left many students unable to afford university education due to the lack of clear financial support systems.
                 </p>
@@ -139,5 +167,25 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+
+    <script>
+        // JavaScript for Auto-Switching Image Carousel
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".carousel-images img");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Hide all images
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;  // Loop back to the first image
+            }
+            slides[slideIndex - 1].style.display = "block";  // Show the current image
+            setTimeout(showSlides, 2000);  // Change image every 2 seconds
+        }
+
+        showSlides();  // Initial call to start the carousel
+    </script>
 </body>
 </html>

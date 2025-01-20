@@ -64,6 +64,27 @@
             margin-bottom: 20px;
         }
 
+        /* Image Styles for Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel img:not(:first-child) {
+            display: none; /* Hide other images by default */
+        }
+
         /* Footer Styles */
         footer {
             background-color: #000;
@@ -105,6 +126,12 @@
     <main>
         <div class="container">
             <article>
+                <!-- Carousel -->
+                <div class="carousel">
+                    <img src="images/protest-1.jpg" alt="Protest Against Finance Bill" />
+                    <img src="images/police-clash.jpg" alt="Police Clash During Protests" />
+                </div>
+
                 <p>
                     The 2024 Finance Bill in Kenya sparked unprecedented public outcry, leading to the #RejectFinanceBill2024 movement. This bill, which proposed heavy tax increases on essentials like bread, mobile money transfers, and even vehicles, was seen as an additional burden on citizens already grappling with a high cost of living. 
                 </p>
@@ -136,5 +163,23 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll(".carousel img"); // Select all images in the carousel
+
+        // Function to change the image every 2 seconds
+        function changeImage() {
+            // Hide all images
+            images.forEach(img => img.style.display = "none");
+            
+            // Show the next image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = "block";
+        }
+
+        // Set interval to change image every 2 seconds (2000 milliseconds)
+        setInterval(changeImage, 2000);
+    </script>
 </body>
 </html>

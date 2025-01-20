@@ -4,97 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruto's Policies and the Economic Downfall of Kenya</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Add your styles here (or in your linked CSS) */
 
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
+        /* Image Carousel Styles */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 30px;
             border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
         }
 
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        .carousel-images img {
+            max-width: 100%;
+            border-radius: 10px;
+            display: block;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -105,6 +38,14 @@
     <main>
         <div class="container">
             <article>
+                <!-- Image Carousel with automatic switching of images every 2 seconds -->
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="image1.jpg" alt="Image 1">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                </div>
+
                 <p>
                     Since President William Ruto took office, Kenya has experienced an economic downturn, contrary to his campaign promises of uplifting the so-called "hustler nation." His fiscal policies have been criticized for exacerbating the cost of living, making daily survival increasingly difficult for the average Kenyan.
                 </p>
@@ -139,5 +80,25 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+
+    <script>
+        // JavaScript for Auto-Switching Image Carousel
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".carousel-images img");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Hide all images
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;  // Loop back to the first image
+            }
+            slides[slideIndex - 1].style.display = "block";  // Show the current image
+            setTimeout(showSlides, 2000);  // Change image every 2 seconds
+        }
+
+        showSlides();  // Initial call to start the carousel
+    </script>
 </body>
 </html>

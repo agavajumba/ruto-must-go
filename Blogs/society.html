@@ -64,6 +64,27 @@
             margin-bottom: 20px;
         }
 
+        /* Image Styles for Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel img:not(:first-child) {
+            display: none; /* Hide other images by default */
+        }
+
         /* Footer Styles */
         footer {
             background-color: #000;
@@ -105,6 +126,12 @@
     <main>
         <div class="container">
             <article>
+                <!-- Carousel -->
+                <div class="carousel">
+                    <img src="images/society-protest.jpg" alt="Society Protests" />
+                    <img src="images/police-clash.jpg" alt="Police Clash During Protests" />
+                </div>
+
                 <p>
                     Under President William Ruto's governance, Kenyan society has witnessed a disturbing shift towards what many perceive as an era of moral and ethical decline. The public discourse has been marked by disillusionment, with Ruto earning nicknames like "Zakayo," "Kasongo," and "Kaongo," each reflecting different facets of his public image - from tax collector to a figure of mockery or disdain.
                 </p>
@@ -136,5 +163,23 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll(".carousel img"); // Select all images in the carousel
+
+        // Function to change the image every 2 seconds
+        function changeImage() {
+            // Hide all images
+            images.forEach(img => img.style.display = "none");
+            
+            // Show the next image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = "block";
+        }
+
+        // Set interval to change image every 2 seconds (2000 milliseconds)
+        setInterval(changeImage, 2000);
+    </script>
 </body>
 </html>
