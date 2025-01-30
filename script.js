@@ -1,21 +1,27 @@
-const getDate = document.getElementById("getDate");
-const getFullYear = new Date().getFullYear();
-getDate.innerHTML = getFullYear;
-
-
-$(document).ready(function(){
-    $(".menu").click(function(){
-        $(".navbar-section2").toggle();
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const menu = document.getElementById('menu');
+    const navList = document.querySelector('.navbar-section2 ul');
     
-        if ($(window).width() <= 640) { 
-            if ($(".navbar-section2").is(":visible")) {
-                $("body").css("overflow", "hidden");
-            } else {
-                $("body").css("overflow", "auto");
-            }
-        } else {
-            $(".navbar-section2").toggle();
-            $("body").css("overflow", "auto");
-        }
+    menu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navList.classList.toggle('active');
+    });
+  
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar-section2') && !e.target.matches('#menu')) {
+        navList.classList.remove('active');
+      }
+    });
+  
+    // Smooth scroll polyfill
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
-});
+    });
+  });
